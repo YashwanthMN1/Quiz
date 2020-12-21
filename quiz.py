@@ -9,6 +9,7 @@ class master:
 		query3 = "create table if not exists hard (question_id VARCHAR(20),questions VARCHAR(50),option1 VARCHAR(20),option2 VARCHAR(20),option3 VARCHAR(20),option4 VARCHAR(20),answer VARCHAR(20))"
 		query4 = "create table if not exists results (username VARCHAR(20),difficulty VARCHAR(6),score decimal(2))"
 		cur = self.con.cursor()
+		cur.execute("create database if not exists mcq")
 		cur.execute("use mcq")
 		cur.execute(query1)
 		cur.execute(query2)
